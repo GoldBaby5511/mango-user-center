@@ -1,0 +1,50 @@
+app:
+  env: dev
+  debug: true
+  system: mango-user-center
+  host: https://127.0.0.1
+  port: 19956
+  logdir: "./logs"
+
+rpc:
+  commonLogic: http://127.0.0.1:19957
+
+dbs:
+  default:
+    driver: mysql
+    host: 127.0.0.1
+    port: 3306
+    user: root
+    password: 123456
+    dbname: mango_user_center
+    tableprefix:
+  mango_property:
+    driver: mysql # 自动连接mysql或postgres
+    host: 127.0.0.1
+    port: 3306
+    user: root
+    password: 123456
+    dbname:  mango_property
+    tableprefix:
+
+redis:
+  host: 
+  port: 6379
+  auth:
+  select: 1
+
+jwt:
+  key: hB4ItLfoqlsaUbWd
+  expires: 7200
+
+email:
+  host:
+  port:
+  from:
+  username:
+  authcode:
+
+robot:
+  api:
+  key:
+

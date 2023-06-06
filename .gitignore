@@ -1,0 +1,10 @@
+.vscode
+.DS_Store
+test
+tmp
+main
+tempapp
+Dockerfile
+log
+logs
+config/config.yaml
