@@ -8,7 +8,6 @@ import (
 	"mango-user-center/pkg/response"
 	"mango-user-center/pkg/token"
 	"mango-user-center/pkg/util"
-	"strconv"
 	"sync"
 	"time"
 
@@ -45,15 +44,6 @@ func (u User) Signup(req dto.UserSignupReq, resp *dto.UserSignupResp) error {
 			Avatar:   "/avatar/1.png",
 			Password: password,
 			Salt:     salt,
-		}
-		if req.InviterId != "" {
-			inviter, err := strconv.Atoi(req.InviterId)
-			if err != nil {
-				log.WithField("account", req.Account).WithField("req.InviterId", req.InviterId).Error(err)
-			} else {
-				ua.InviterId = inviter
-				ua.InvitationStatus = 1
-			}
 		}
 		err := tx.Create(&ua).Error
 		if err != nil {

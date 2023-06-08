@@ -39,8 +39,6 @@ type UserSignupReq struct {
 	// Nickname         string `json:"nickname" form:"nickname"`
 	// SiteId           uint8  `json:"site_id" form:"site_id"`
 	// ChannelId        uint8  `json:"channel_id" form:"channel_id"`
-
-	InviterId string `json:"inviter_id" form:"inviter_id"`
 }
 
 type UserSignupResp = UserLoginByWalletResp

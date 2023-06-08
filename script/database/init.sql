@@ -16,7 +16,7 @@ CREATE TABLE `user_account` (
   `change_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`sys_id`),
   UNIQUE KEY `uk_account` (`account`)
-) ENGINE=InnoDB COMMENT '用户账号' DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT '用户账号';
 
 CREATE TABLE `user_captcha` (
   `sys_id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
@@ -30,7 +30,7 @@ CREATE TABLE `user_captcha` (
   PRIMARY KEY (`sys_id`),
   KEY `idx_account_createtime` (`account`,`create_time`),
   KEY `idx_ip_createtime` (`ip`,`create_time`)
-) ENGINE=InnoDB COMMENT '用户验证码' DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT '用户验证码';
 
 CREATE TABLE `user_login` (
   `sys_id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
@@ -48,7 +48,7 @@ CREATE TABLE `user_login` (
   PRIMARY KEY (`sys_id`),
   KEY `idx_userid_createtime` (`user_id`,`create_time`),
   KEY `idx_userid` (`user_id`)
-) ENGINE=InnoDB COMMENT '用户登录记录' DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT '用户登录记录';
 
 
 CREATE TABLE `user_online` (
@@ -60,7 +60,7 @@ CREATE TABLE `user_online` (
   `change_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`sys_id`),
   KEY `idx_userid_createtime` (`user_id`,`create_time`)
-) ENGINE=InnoDB COMMENT '用户在线' DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT '用户在线';
 
 CREATE TABLE `game_id_normal` (
   `sys_id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '自增id',
@@ -69,7 +69,7 @@ CREATE TABLE `game_id_normal` (
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`sys_id`),
   UNIQUE KEY `uk_gameid` (`game_id`)
-) ENGINE=InnoDB COMMENT '预生成游戏id-普通' DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT '预生成游戏id-普通';
 
 CREATE TABLE `game_id_excellent` (
   `sys_id` int unsigned NOT NULL AUTO_INCREMENT COMMENT '自增id',
@@ -78,4 +78,4 @@ CREATE TABLE `game_id_excellent` (
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`sys_id`),
   UNIQUE KEY `uk_gameid` (`game_id`)
-) ENGINE=InnoDB COMMENT '预生成游戏id-靓号' DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT '预生成游戏id-靓号';
